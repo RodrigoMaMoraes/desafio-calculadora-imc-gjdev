@@ -1,0 +1,60 @@
+<!DOCTYPE html>  
+<html>
+<head>
+    <title>IMC</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+<input type="text" class="peso" name="peso" placeholder="Seu Peso"/>
+<input type="text" class="altura" name="altura" placeholder="Sua altura" />
+<input type="button" class="btn"  value="Calcular" />
+<span class="result">Resultado:</span>
+
+
+
+</body>
+
+<script type="text/javascript">
+
+    btn =document.querySelector(".btn");
+    btn.addEventListener("click", ()=> {
+    let peso   = parseFloat(document.querySelector(".peso").value);
+    let altura = parseFloat(document.querySelector(".altura").value);
+    let result = peso / (altura * altura);
+    result = result.toFixed(1)
+    let imc;
+    let text;
+        
+        if (result < 18.5){
+            text = " Magreza";
+        }
+
+        if (result > 18.5 && result <=24.9){
+            text = " Peso Normal";
+        }  
+
+        if (result > 25 && result <=29.9){
+            text = " Sobrepeso"; 
+        }
+
+        if (result > 30 && result <=34.9){
+            text = " Obesisade grau 1";
+        }
+            
+        if (result > 35 && result <=39.9){
+            text = " Obesidade grau 2";
+        }
+            
+        if (result > 40 && result <=40){
+            text = " Obesidade grau 3";
+        }
+            document.querySelector(".result").innerHTML = result+text;
+
+    
+    });
+
+</script>
+
+
+</html>
